@@ -1,0 +1,26 @@
+<launch>
+  <!-- uvc_cam -->
+  <arg name="front_camera_dev" default="/dev/video0" />
+  <!-- <arg name="top_camera_dev" default="/dev/video2" /> -->
+  <!--   <node name="uvc_camera_top" pkg="uvc_camera" type="uvc_camera_node" output="screen"> -->
+  <!--     <remap from="image_raw" to="/top_camera/image_raw"/> -->
+  <!--     <remap from="image_raw/compressed" to="/top_camera/image_raw/compressed"/> -->
+  <!--     <remap from="camera_info" to="/top_camera/camera_info"/> -->
+  <!--     <param name="device" value="$(arg top_camera_dev)"/> -->
+  <!--     <param name="fps" value="30"/> -->
+  <!--     <param name="width" value="640"/> -->
+  <!--     <param name="height" value="360"/> -->
+  <!--     <param name="format" value="rgb"/> -->
+  <!--   </node> -->
+  <node name="uvc_camera_front" pkg="uvc_camera" type="uvc_camera_node" output="screen">
+    <remap from="image_raw" to="/front_camera/image_raw"/>
+    <remap from="image_raw/compressed" to="/front_camera/image_raw/compressed"/>
+    <remap from="camera_info" to="/front_camera/camera_info"/>
+    <param name="device" value="$(arg front_camera_dev)"/>
+    <param name="fps" value="30"/>
+    <param name="width" value="640"/>
+    <param name="height" value="360"/>
+    <param name="format" value="rgb"/>
+  </node>
+
+</launch>

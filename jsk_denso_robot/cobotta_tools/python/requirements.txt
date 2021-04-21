@@ -1,0 +1,12 @@
+###### Requirements without Version Specifiers ######`
+numpy
+numpy-quaternion
+transitions
+pynput
+absl-py
+tqdm
+pycryptodomex
+gnupg
+rospkg
+lz4
+opencv-python

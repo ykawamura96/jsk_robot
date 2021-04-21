@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<launch>
+  <include file="$(find cobotta_tools)/launch/cobotta_visualizer.launch" />
+  <node name="bcap_ros_tools" pkg="bcap_ros_tools" type="bcap_ros_bridge_node.py" />
+  <node name="joy_node" pkg="joy" type="joy_node"/>
+  
+  <!-- start touch usb -->
+  <group ns="left_device">
+    <node name="omni_state" pkg="omni_common" type="omni_state" output="screen">
+      <param name="device_name" value="Left Device"/>
+      <param name="omni_name" value="phantom"/>
+      <param name="publish_rate" value="$(arg publish_rate)"/>
+      <param name="reference_frame" value="/larm_link_0"/>
+      <param name="units" value="$(arg units)"/>
+    </node>
+  </group>
+</launch>

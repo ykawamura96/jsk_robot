@@ -1,0 +1,15 @@
+<launch>
+
+  <!-- <include file="$(find cobotta_tools)/launch/start_cameras.launch" /> -->
+  <arg name="model" default="$(find cobotta_tools)/models/cobotta_description/cobotta.urdf.xacro" />
+  <arg name="rvizconfig" default="$(find cobotta_tools)/config/simple_visualization.rviz" />
+  <param name="/cobotta/robot_description" command="$(find xacro)/xacro.py $(arg model)" />
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
+    <remap from="joint_states" to="/cobotta/joint_states" />
+    <remap from="robot_description" to="/cobotta/robot_description" />
+  </node>
+  <!-- <node name="cobotta_visualizer" pkg="cobotta_tools" type="cobotta_status_visualizer.py" /> -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+
+</launch>

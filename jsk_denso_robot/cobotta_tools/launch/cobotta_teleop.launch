@@ -1,0 +1,8 @@
+<launch>
+  
+    <include file="$(find cobotta_tools)/launch/cobotta_visualizer.launch" />
+    <node name="bcap_ros_tools" pkg="bcap_ros_tools" type="bcap_ros_bridge_node.py" />
+    <node name="joy_node" pkg="joy" type="joy_node"/>
+    <!-- <node name="joybad_node" pkg="joy" type="joy_node" /> -->
+    <!-- <node name="cobotta_teleop_node" pkg="cobotta_tools" type="cobotta_teleop.py" /> -->
+</launch>

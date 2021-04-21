@@ -1,0 +1,11 @@
+## either width or grasp must be specified
+
+float64 width  # [mm]
+bool  grasp    # true to close hand until grasp something, false to open
+float64 speed  # [%], 100 by default
+float64 force  # TODO check unit, maximu by defalt
+---
+uint8 SUCCESS=0
+uint8 ALREADY_HOLDS=0
+uint8 OUTRANGE=1
+uint8 status
