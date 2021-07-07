@@ -19,8 +19,8 @@
   <run_depend>franka_example_controllers</run_depend>
   <run_depend>franka_visualization</run_depend>
 
-  <run_depend>omni_common</run_depend>
-  <run_depend>omni_msgs</run_depend>
+  <!-- <run_depend>omni_common</run_depend> -->
+  <!-- <run_depend>omni_msgs</run_depend> -->
 
   <run_depend>python-scipy</run_depend>
   <run_depend>python-numpy</run_depend>
